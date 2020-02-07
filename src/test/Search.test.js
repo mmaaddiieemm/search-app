@@ -1,8 +1,9 @@
-//import React from 'react';
-//import { render } from '@testing-library/react';
+
 import Search from '../Search.js';
 
-const testOrgData = {
+const testOrgData = 
+[
+    {
     "_id": 101,
     "url": "http://initech.zendesk.com/api/v2/organizations/101.json",
     "external_id": "9270ed79-35eb-4a38-a46f-35725197ea8d",
@@ -22,26 +23,49 @@ const testOrgData = {
         "Rodriguez",
         "Farley"
     ]
-};
+}];
+const testOrg = 
+[
+    {
+        "_id": 112, 
+        "url": "maddie.com"
+    }, 
+    {
+        "_id": 113, 
+        "url": "you.com"
+    }, 
+    {
+        "_id": 114, 
+        "url": "maddie.com"
+    }
 
-test('if no match found, return empty array', () => {
+]
+
+test('Single entry: if no match, return empty array', () => {
     const criteria = "money"; 
     const result = Search(criteria, "", testOrgData); 
     expect(result).toStrictEqual([]); 
 }); 
 
-test('Given basic criteria, return the data that matches', () => {
+test('Single entry: match given valid criteria and value', () => {
     const criteria = 'name'; 
     const val = 'Enthaze'; 
-    const expected = [testOrgData]; 
-    const result = Search(criteria, val, [testOrgData]);
-    expect(result).toStrictEqual(expected); 
+    const result = Search(criteria, val, testOrgData);
+    expect(result).toStrictEqual(testOrgData); 
 }); 
 
-test('Given a criteria which has multiple values, return the data that matches', () => {
+test('Single entry: match given a criteria which has an array for a value', () => {
     const criteria = 'tags'; 
     const val = 'West'; 
-    const expected = [testOrgData]; 
-    const result = Search(criteria, val, [testOrgData]);
-    expect(result).toStrictEqual(expected); 
+    const result = Search(criteria, val, testOrgData);
+    expect(result).toStrictEqual(testOrgData); 
 }); 
+
+test('Arbitrary entries: match given simple criteria', () => {
+    const criteria = '_id'; 
+    const val = 112; 
+    const result = Search(criteria, val, testOrg); 
+    expect(result.length).toStrictEqual(1); 
+    const result2 = Search("url", "maddie.com", testOrg);
+    expect(result2.length).toStrictEqual(2); 
+})

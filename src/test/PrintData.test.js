@@ -23,8 +23,8 @@ const testOrgData = {
 
 
 test("PrintData can print string", () => {
-    console.log(testOrgData); 
+    //console.log(testOrgData); 
     const output = PrintData(testOrgData); 
-    console.log(output); 
+    //console.log(output); 
     expect(true).toBeTruthy(); 
 })
