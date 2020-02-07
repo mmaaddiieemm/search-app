@@ -30,11 +30,18 @@ test('if no match found, return empty array', () => {
     expect(result).toStrictEqual([]); 
 }); 
 
-test('Given basic criteria, return the data in a readable format', () => {
+test('Given basic criteria, return the data that matches', () => {
     const criteria = 'name'; 
     const val = 'Enthaze'; 
     const expected = [testOrgData]; 
-    const result = Search(criteria, val, [testOrgData]); 
-    console.log(result);
+    const result = Search(criteria, val, [testOrgData]);
+    expect(result).toStrictEqual(expected); 
+}); 
+
+test('Given a criteria which has multiple values, return the data that matches', () => {
+    const criteria = 'tags'; 
+    const val = 'West'; 
+    const expected = [testOrgData]; 
+    const result = Search(criteria, val, [testOrgData]);
     expect(result).toStrictEqual(expected); 
 }); 
