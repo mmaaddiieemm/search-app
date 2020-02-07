@@ -24,12 +24,17 @@ const testOrgData = {
     ]
 };
 
-test('Fake test', () => {
-    expect(true).toBeTruthy(); 
+test('if no match found, return empty array', () => {
+    const criteria = "money"; 
+    const result = Search(criteria, "", testOrgData); 
+    expect(result).toStrictEqual([]); 
 }); 
 
-test('if no match found, output error', () => {
-    const criteria = "money"; 
-    const result = Search(criteria, testOrgData); 
-    expect(result).toBe("Could not find entry"); 
+test('Given basic criteria, return the data in a readable format', () => {
+    const criteria = 'name'; 
+    const val = 'Enthaze'; 
+    const expected = [testOrgData]; 
+    const result = Search(criteria, val, [testOrgData]); 
+    console.log(result);
+    expect(result).toStrictEqual(expected); 
 }); 

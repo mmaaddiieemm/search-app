@@ -1,13 +1,17 @@
-import Orgs from "./Data/organizations.json"; 
-import Tickets from "./Data/tickets.json"; 
-import Users from "./Data/users.json"; 
 
-function Search(criteria, data) {
-    if (data.hasOwnProperty(criteria)) {
-
-    } else {
-        return ("Could not find entry"); 
+// criteria and val are a key:val pair to search for
+// data is the array of json objects. 
+function Search(key, val, inputData) {
+    var results = []; 
+    for (var i = 0; i < inputData.length; i++ ) {
+        var entry = inputData[i]; 
+        if (entry.hasOwnProperty(key)) {
+            if (entry[key] === val) {
+                results.push(entry); 
+            }
+        }
     }
+    return results; 
 }
 
 export default Search; 
