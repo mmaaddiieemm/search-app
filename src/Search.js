@@ -4,6 +4,7 @@
 function Search(key, val, inputData) {
   // a, d, e, i, l, il, s, t, 
   const results = [];
+  if (key === null || val === null || inputData === null) return results; 
 //   if (val === "" ) return results ; 
   for (let i = 0; i < inputData.length; i++) {
     const entry = inputData[i];
@@ -15,15 +16,15 @@ function Search(key, val, inputData) {
       // databases (ie it might be "_id" in one db, but "observer_id" in another)
       if (keys[h].toString().includes(key)) {
         const currKey = keys[h];
-        if (entry[currKey] === null ) return results; 
+        if (entry[currKey] === null ) continue; 
         if (Array.isArray(entry[currKey])) {
           for (let j = 0; j < entry[currKey].length; j++) {
             const thisArray = entry[currKey];
-            if (thisArray[j].toString() === val) {
+            if (thisArray[j].toString() === val.toString()) {
               results.push(entry);
             }
           }
-        } else if (entry[currKey].toString() === val) {
+        } else if (entry[currKey].toString() === val.toString()) {
           results.push(entry);
         }
       }

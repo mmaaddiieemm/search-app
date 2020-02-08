@@ -1,8 +1,8 @@
 import React from 'react';
-import Search from './Search.js';
-import Users from './Users.jsx';
-import Tickets from './Tickets.js';
-import Organizations from './Organizations.js';
+import Search from './Search';
+import Users from './Users';
+import Tickets from './Tickets';
+import Organizations from './Organizations';
 
 const OrgDb = require('./data/organizations.json');
 const TicketsDb = require('./data/tickets.json');
