@@ -8,7 +8,7 @@ Run the following commands
 ## Assumptions and Implementation Details
 
 Assumptions: 
-- User input must be in the format of <search criteria>=<value>
+- User input must be in the format of key=value
 
 Implementation Details:
 - If a criteria is not found, print "No entry found that matches criteria"
