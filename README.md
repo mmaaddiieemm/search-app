@@ -1,13 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## available commands to the searcher
+## Quick Start
 
-Type of entry: -u | -o | -t  (at least one required, but could be all 3, as in -uot or any permutation)
-If a criteria is not found, print "No entry found that matches criteria"
-Only print entries matching the above type(s). 
-Output 
+Run the following commands 
+`npm install`
+`npm start`
 
+## Assumptions and Implementation Details
 
+Assumptions:
+
+- User input must be in the format of key=value
+
+Implementation Details:
+
+- If a criteria is not found, print "No entry found that matches criteria"
 
 ## Available Scripts
 
