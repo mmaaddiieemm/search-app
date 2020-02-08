@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InputGroup, FormControl } from 'react-bootstrap';
-import DisplayResults from './DisplayResults.jsx';
+import DisplayResults from './DisplayResults';
 import './App.css';
 
 function App() {
