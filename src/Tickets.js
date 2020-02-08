@@ -1,10 +1,10 @@
-import React from "react"; 
+import React from 'react';
 
-function Tickets({ticketData}) {
-    return (
-        <div>
-            <p>{ticketData.description}</p>
-        </div>
-    ); 
+function Tickets({ ticketData }) {
+  return (
+    <div>
+      <p>{ticketData.description}</p>
+    </div>
+  );
 }
-export default Tickets; 
+export default Tickets;

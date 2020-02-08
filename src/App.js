@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
-import {InputGroup, FormControl, Button} from "react-bootstrap";
-import DisplayResults from "./DisplayResults";
+import React, { useState } from 'react';
+import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import DisplayResults from './DisplayResults';
 import './App.css';
 
 function App() {
-  const [searchCriteria, setSearchCriteria] = useState(""); 
+  const [searchCriteria, setSearchCriteria] = useState('');
 
-  var searchKey, value = ""; 
-  var parsedArr = searchCriteria.split("=")
+  let searchKey; let
+    value = '';
+  const parsedArr = searchCriteria.split('=');
   if (parsedArr.length > 1) {
-    searchKey=parsedArr[0]; 
-    value=parsedArr[1];
+    searchKey = parsedArr[0];
+    value = parsedArr[1];
   }
   return (
     <div className="App-header">
@@ -20,10 +21,10 @@ function App() {
         <InputGroup.Prepend>
           {/* <Button variant="outline-secondary"></Button> */}
         </InputGroup.Prepend>
-        <FormControl aria-describedby="basic-addon1" onChange={e => setSearchCriteria(e.target.value)}/>
+        <FormControl aria-describedby="basic-addon1" onChange={(e) => setSearchCriteria(e.target.value)} />
       </InputGroup>
       <p>Results: </p>
-      <DisplayResults searchKey={searchKey} value={value}></DisplayResults>
+      <DisplayResults searchKey={searchKey} value={value} />
     </div>
   );
 }

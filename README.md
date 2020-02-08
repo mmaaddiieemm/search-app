@@ -1,18 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Quick Start
+
 Run the following commands 
 `npm install`
 `npm start`
 
 ## Assumptions and Implementation Details
 
-Assumptions: 
+Assumptions:
+
 - User input must be in the format of key=value
 
 Implementation Details:
-- If a criteria is not found, print "No entry found that matches criteria"
 
+- If a criteria is not found, print "No entry found that matches criteria"
 
 ## Available Scripts
 
