@@ -9,9 +9,19 @@ var UsersDb = require("./Data/users.json");
 function SearchDatabase(key, value) {
     let results = []; 
     
-    results.push(Search(key, value, UsersDb));
-    results.push(Search(key, value, OrgDb)); 
-    results.push(Search(key, value, TicketsDb)); 
+    // now this is REAL dumb but i'll fix it... 
+    var tempResults = Search(key, value, UsersDb);
+    for (var entry in tempResults) { 
+        results.push(entry); 
+    }
+    tempResults = Search(key, value, OrgDb); 
+    for (var entry1 in tempResults) {
+        results.push(entry1); 
+    }
+    tempResults = Search(key, value, TicketsDb); 
+    for (var entry2 in tempResults) {
+        results.push(entry2); 
+    }
     return results; 
 }
 

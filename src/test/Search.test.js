@@ -52,6 +52,7 @@ test('Single entry: match given a criteria which has an array for a value', () =
     const criteria = 'tags'; 
     const val = 'West'; 
     const result = Search(criteria, val, testOrgData);
+    console.log(result); 
     expect(result).toStrictEqual(testOrgData); 
 }); 
 
@@ -62,4 +63,4 @@ test('Arbitrary entries: match given simple criteria', () => {
     expect(result.length).toStrictEqual(1); 
     const result2 = Search("url", "maddie.com", testOrg);
     expect(result2.length).toStrictEqual(2); 
-})
+});
