@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App-header">
       <p>What do you want to search? </p>
-      <p>(Your query must be in the format &lt term=&ltvalue)</p>
+      <p>(Your query must be in the format &lt;criteria&gt;=&lt;value&gt;)</p>
       <InputGroup className="mb-3">
         <InputGroup.Prepend>
           {/* <Button variant="outline-secondary"></Button> */}
