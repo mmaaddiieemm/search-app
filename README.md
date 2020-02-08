@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Quick Start
+Run the following commands 
+`npm install`
+`npm start`
+
 ## Assumptions and Implementation Details
 
 Assumptions: 
