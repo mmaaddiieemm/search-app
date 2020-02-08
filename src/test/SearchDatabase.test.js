@@ -36,7 +36,7 @@ test('when a single option flag is used, search only that database', () => {
 }); 
 
 test('return the exact number of matches... ', () => {
-    var result = SearchDatabase("verified", 'true');
+    var result = SearchDatabase("verified", true);
     expect(result.length).toStrictEqual(26); 
 }); 
 
