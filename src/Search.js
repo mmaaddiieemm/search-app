@@ -2,10 +2,10 @@
 // criteria and val are a key:val pair to search for
 // data is the array of json objects.
 function Search(key, val, inputData) {
-  // a, d, e, i, l, il, s, t, 
+  // a, d, e, i, l, il, s, t,
   const results = [];
-  if (key === null || val === null || inputData === null) return results; 
-//   if (val === "" ) return results ; 
+  if (key === null || val === null || inputData === null) return results;
+  //   if (val === "" ) return results ;
   for (let i = 0; i < inputData.length; i++) {
     const entry = inputData[i];
     const keys = Object.keys(entry);
@@ -16,7 +16,7 @@ function Search(key, val, inputData) {
       // databases (ie it might be "_id" in one db, but "observer_id" in another)
       if (keys[h].toString().includes(key)) {
         const currKey = keys[h];
-        if (entry[currKey] === null ) continue; 
+        if (entry[currKey] === null) break;
         if (Array.isArray(entry[currKey])) {
           for (let j = 0; j < entry[currKey].length; j++) {
             const thisArray = entry[currKey];
