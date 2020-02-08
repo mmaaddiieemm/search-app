@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
-import { Form, InputGroup, Button} from "react-bootstrap";
-import Results from "./Results";
+import {InputGroup} from "react-bootstrap";
+import DisplayResults from "./DisplayResults";
 import './App.css';
-import Search from "./Search"; 
 
 function App() {
-  const [searchCriteria, setSearchCriteria] = useState(""); 
-  
-  const criteria = "-u"; 
+  // const [searchCriteria, setSearchCriteria] = useState(""); 
 
+  const searchKey = "id"; 
+  const value = 2; 
   return (
     <div className="App">
       <p>What do you want to search? </p>
       <p>available options: -</p>
       <InputGroup></InputGroup>
       <p>Results: </p>
-      <Results criteria={searchCriteria}></Results>
+      <DisplayResults searchKey={searchKey} value={value}></DisplayResults>
     </div>
   );
 }
