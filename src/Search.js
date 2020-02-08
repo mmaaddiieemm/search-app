@@ -17,12 +17,12 @@ function Search(key, val, inputData) {
                 if (Array.isArray(entry[currKey])) {
                     for (var j = 0; j < entry[currKey].length; j++) {
                         var thisArray = entry[currKey]; 
-                        if (thisArray[j] === val) {
+                        if (thisArray[j].toString() === val) {
                             results.push(entry); 
                         }
                     }
                 } else {
-                    if (entry[currKey] === val) {
+                    if (entry[currKey].toString() === val) {
                         results.push(entry); 
                     }
                 }

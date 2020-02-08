@@ -58,7 +58,7 @@ test('Single entry: match given a criteria which has an array for a value', () =
 
 test('Arbitrary entries: match given simple criteria', () => {
     const criteria = '_id'; 
-    const val = 112; 
+    const val = '112'; 
     const result = Search(criteria, val, testOrg); 
     expect(result.length).toStrictEqual(1); 
     const result2 = Search("url", "maddie.com", testOrg);
