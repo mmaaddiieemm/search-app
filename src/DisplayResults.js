@@ -8,7 +8,11 @@ const OrgDb = require('./data/organizations.json');
 const TicketsDb = require('./data/tickets.json');
 const UsersDb = require('./data/users.json');
 
-function DetermineResults({users, tickets, orgs}) {
+function DisplayResults({ searchKey, value }) {
+  const users = Search(searchKey, value, UsersDb);
+  const tickets = Search(searchKey, value, TicketsDb);
+  const orgs = Search(searchKey, value, OrgDb);
+
   if (users.length === 0 && tickets.length === 0 && orgs.length === 0 ) {
     return <p>No entry found that matches criteria</p>; 
   } else {
@@ -20,16 +24,6 @@ function DetermineResults({users, tickets, orgs}) {
       </div>
     ); 
   }
-}
-
-function DisplayResults({ searchKey, value }) {
-  const users = Search(searchKey, value, UsersDb);
-  const tickets = Search(searchKey, value, TicketsDb);
-  const orgs = Search(searchKey, value, OrgDb);
-
-  return (
-    <DetermineResults users={users} tickets={tickets} orgs={orgs} />
-  );
 }
 
 export default DisplayResults;
