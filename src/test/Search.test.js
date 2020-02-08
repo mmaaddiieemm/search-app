@@ -1,5 +1,5 @@
 
-import Search from '../Search.js';
+import Search from '../Search';
 
 const testOrgData = [
   {
@@ -53,7 +53,6 @@ test('Single entry: match given a criteria which has an array for a value', () =
   const criteria = 'tags';
   const val = 'West';
   const result = Search(criteria, val, testOrgData);
-  console.log(result);
   expect(result).toStrictEqual(testOrgData);
 });
 

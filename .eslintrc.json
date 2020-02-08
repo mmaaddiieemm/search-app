@@ -23,6 +23,8 @@
     "plugins": [
         "react"
     ],
-    "rules": {
+    "rules":{
+        "linebreak-style": 0, 
+        "no-plusplus": 2
     }
 }
