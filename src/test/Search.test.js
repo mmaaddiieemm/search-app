@@ -28,15 +28,18 @@ const testOrg =
 [
     {
         "_id": 112, 
-        "url": "maddie.com"
+        "url": "maddie.com", 
+        "description": ""
     }, 
     {
         "_id": 113, 
-        "url": "you.com"
+        "url": "you.com",
+        "description": "why do i like to describe"
     }, 
     {
         "_id": 114, 
-        "url": "maddie.com"
+        "url": "maddie.com",
+        "description": "non-empty description!"
     }
 
 ]
@@ -64,3 +67,10 @@ test('Arbitrary entries: match given simple criteria', () => {
     const result2 = Search("url", "maddie.com", testOrg);
     expect(result2.length).toStrictEqual(2); 
 });
+
+test('A user can search for empty values', () => {
+    const criteria = 'description'; 
+    const val = ''; 
+    const result = Search(criteria, val, testOrg); 
+    expect(result.length).toStrictEqual(1); 
+})

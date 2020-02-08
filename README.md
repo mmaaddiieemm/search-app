@@ -1,12 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## available commands to the searcher
+## Assumptions and Implementation Details
 
-Type of entry: -u | -o | -t  (at least one required, but could be all 3, as in -uot or any permutation)
-If a criteria is not found, print "No entry found that matches criteria"
-Only print entries matching the above type(s). 
-Output 
+Assumptions: 
+- User input must be in the format of <search criteria>=<value>
 
+Implementation Details:
+- If a criteria is not found, print "No entry found that matches criteria"
 
 
 ## Available Scripts

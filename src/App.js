@@ -7,14 +7,15 @@ function App() {
   const [searchCriteria, setSearchCriteria] = useState(""); 
 
   var searchKey, value = ""; 
-  if (searchCriteria.split(":").length > 1) {
-    searchKey=searchCriteria.split(":")[0]; 
-    value=searchCriteria.split(":")[1]; 
+  var parsedArr = searchCriteria.split("=")
+  if (parsedArr.length > 1) {
+    searchKey=parsedArr[0]; 
+    value=parsedArr[1];
   }
   return (
     <div className="App-header">
       <p>What do you want to search? </p>
-      <p>(Your query must be in the format 'search term':'value')</p>
+      <p>(Your query must be in the format 'search term'='value')</p>
       <InputGroup className="mb-3">
         <InputGroup.Prepend>
           {/* <Button variant="outline-secondary"></Button> */}

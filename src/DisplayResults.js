@@ -11,10 +11,7 @@ function DisplayResults({searchKey, value}) {
     var users = Search(searchKey, value, UsersDb); 
     var tickets = Search(searchKey, value, TicketsDb); 
     var orgs = Search(searchKey, value, OrgDb); 
-    users.map((i) => console.log(i)); 
-    console.log(users); 
-    console.log(searchKey); 
-    console.log(value); 
+
     return(
         <div>
             {users.map( (i) => <Users key={i.external_id} userData={i} /> )}
