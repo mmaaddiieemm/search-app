@@ -43,16 +43,10 @@ const testOrg =
 
 test('Single entry: if no match, return empty array', () => {
     const criteria = "money"; 
-    const result = Search(criteria, "", testOrgData); 
+    const result = Search(criteria, "$$$$$", testOrgData); 
     expect(result).toStrictEqual([]); 
 }); 
 
-test('Single entry: match given valid criteria and value', () => {
-    const criteria = 'name'; 
-    const val = 'Enthaze'; 
-    const result = Search(criteria, val, testOrgData);
-    expect(result).toStrictEqual(testOrgData); 
-}); 
 
 test('Single entry: match given a criteria which has an array for a value', () => {
     const criteria = 'tags'; 
