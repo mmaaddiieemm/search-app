@@ -2,20 +2,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Quick Start
 
-Run the following commands 
+Run the following commands:
 `npm install`
 `npm start`
 
 ## Assumptions and Implementation Details
 
-Assumptions and Usage Instructions:
+Usage Instructions:
 
 - User input must be in the format of &lt;key&gt;=&lt;value&gt;
-- When searching for values which are 'empty', do not specify anything for the &lt;value&gt; field. 
+- When searching for values which are 'empty', do not specify anything for the &lt;value&gt; field.
+
+Assumptions:
+
+- 
 
 Implementation Details:
 
-- If a criteria is not found, print "No entry found that matches criteria"
+- If a criteria is not found, print "No entry found that matches criteria".
+- Partial matches are not allowed, only complete matches.
 
 ## Available Scripts
 
