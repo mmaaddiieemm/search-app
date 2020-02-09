@@ -8,9 +8,10 @@ Run the following commands
 
 ## Assumptions and Implementation Details
 
-Assumptions:
+Assumptions and Usage Instructions:
 
-- User input must be in the format of key=value
+- User input must be in the format of &lt;key&gt;=&lt;value&gt;
+- When searching for values which are 'empty', do not specify anything for the &lt;value&gt; field. 
 
 Implementation Details:
 
