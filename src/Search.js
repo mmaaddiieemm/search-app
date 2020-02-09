@@ -22,10 +22,12 @@ function Search(key, val, inputData) {
             const thisArray = entry[currKey];
             if (thisArray[j].toString() === val.toString()) {
               results.push(entry);
+              break;
             }
           }
         } else if (entry[currKey].toString() === val.toString()) {
           results.push(entry);
+          break;
         }
       }
     }

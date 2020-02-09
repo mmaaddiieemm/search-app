@@ -28,16 +28,22 @@ const testOrg = [
     _id: 112,
     url: 'maddie.com',
     description: '',
+    assignee_id: 21, 
+    submitter_id: 20
   },
   {
     _id: 113,
     url: 'you.com',
     description: 'why do i like to describe',
+    assignee_id: 22,
+    submitter_id: 22
   },
   {
     _id: 114,
     url: 'maddie.com',
     description: 'non-empty description!',
+    assignee_id: 1,
+    submitter_id: 202
   },
 
 ];
@@ -71,3 +77,9 @@ test('A user can search for empty values', () => {
   const result = Search(criteria, val, testOrg);
   expect(result.length).toStrictEqual(1);
 });
+
+test('Return an entry only once if the contents match multiple times', () => {
+  const criteria= '_id'; 
+  const result = Search(criteria, 22, testOrg); 
+  expect(result.length).toStrictEqual(1); 
+})
