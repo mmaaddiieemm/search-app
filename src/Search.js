@@ -1,6 +1,7 @@
 
 // criteria and val are a key:val pair to search for
 // data is the array of json objects.
+// currently only set up for 2 levels of nested objects
 function Search(key, val, inputData) {
 
   const results = [];
@@ -17,6 +18,9 @@ function Search(key, val, inputData) {
       if (keys[h].toString().includes(key)) {
         const currKey = keys[h];
         if (entry[currKey] === null) break;
+        // some properties are arrays, so check each of those. 
+        // for both arrays and normal values, check the value for an exact match
+        // and if so, add it to the results
         if (Array.isArray(entry[currKey])) {
           for (let j = 0; j < entry[currKey].length; j++) {
             const thisArray = entry[currKey];
@@ -25,7 +29,7 @@ function Search(key, val, inputData) {
               break;
             }
           }
-        } else if (entry[currKey].toString() === val.toString()) {
+        } else if (entry[currKey].toString() === val.toString()) { 
           results.push(entry);
           break;
         }
