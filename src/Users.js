@@ -15,15 +15,16 @@ function FormatUserData({ userData }) {
               ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
   return(
     <>
-      <DataRow data={userData} keys={keys[0]} />
-      <DataRow data={userData} keys={keys[1]} />
-      <DataRow data={userData} keys={keys[2]} />
+      {keys.map((row) => {
+        return (<DataRow key={row} data={userData} keys={row} />)
+      })}
     </>
   ); 
 }
 
 
 function Users({ users }) {
+  if (typeof users === 'undefined' || users === null) return <></>; 
   return (
     <div className="Results">
       <ListGroup>
