@@ -61,7 +61,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run lint`
 
-runs eslint on the project files.
+runs eslint on the project files. 
+
+### 'npm run coverage' 
+
+due to an apparent bug in Jest, passing the --coverage option to the react test script returns coverage results that are totally empty, so i've just added this as a script to save some time. 
 
 ## Learn More
 
