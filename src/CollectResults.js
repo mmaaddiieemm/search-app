@@ -8,7 +8,7 @@ const OrgDb = require('./data/organizations.json');
 const TicketsDb = require('./data/tickets.json');
 const UsersDb = require('./data/users.json');
  
-function DisplayResults({ searchKey, value }) {
+function CollectResults({ searchKey, value }) {
   // search for all matching key:value pairs in the data and add them 
   // to the results. 
   var users = Search(searchKey, value, UsersDb);
@@ -41,4 +41,4 @@ function DisplayResults({ searchKey, value }) {
   }
 }
 
-export default DisplayResults;
+export default CollectResults;
