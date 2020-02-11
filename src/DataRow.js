@@ -19,7 +19,7 @@ function DataRow( {data, keys}) {
   // will add some extra characters to make it more readable. 
   function verifyData( data, param) {
     // check to make sure the data is valid, if not return 'undefined' 
-    if ( typeof data[param] === 'undefined' || data[param] === null || !data.hasOwnProperty(param)) {
+    if ( typeof data[param] === 'undefined' || data[param] === null || !data.hasOwnProperty(param) || data === null) {
       return <i>undefined</i>;
     } else {
       let result = data[param].toString(); 
