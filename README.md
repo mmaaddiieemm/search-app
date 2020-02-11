@@ -18,6 +18,7 @@ Assumptions:
 
 - Partial matches on values are not allowed, only complete matches.
 - Partial matches on keys are allowed, i.e. a search for 'id=23' will return results for 'external_id', 'assignee_id' etc, as long as the value is an exact match. 
+- input data must have the following properties: id, external_id, created_at.
 
 Implementation Details:
 

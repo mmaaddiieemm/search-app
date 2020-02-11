@@ -83,4 +83,14 @@ test('Return an entry only once if the contents match multiple times', () => {
   const criteria= '_id'; 
   const result = Search(criteria, 22, testOrg); 
   expect(result.length).toStrictEqual(1); 
-})
+}); 
+
+test('Return an empty array if any of the input values are null', () => {
+  let result = Search(null, '231', testOrg); 
+  expect(result.length).toStrictEqual(0); 
+  result = Search('ids', null, testOrg); 
+  expect(result.length).toStrictEqual(0); 
+  result = Search('ids', 12, null); 
+  expect(result.length).toStrictEqual(0); 
+}); 
+

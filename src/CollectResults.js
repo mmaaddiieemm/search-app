@@ -31,6 +31,10 @@ function CollectResults({ searchKey, value, dataTypes }) {
   if (users.length === 0 && tickets.length === 0 && orgs.length === 0 ) {
     return <p className="App-results">No entry found that matches criteria</p>; 
   } else {
+    // while each of the logic in the three components for the datatypes is extremely 
+    // similar and could easily be condensed into one component, I wanted to keep them 
+    // separate so that each component strictly defines what should be displayed, and so 
+    // we can use PropTypes to enforce what should be passed in. 
     return (
       <div>
         <Users users={users} />
