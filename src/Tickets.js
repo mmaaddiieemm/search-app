@@ -1,5 +1,5 @@
 import React from 'react';
-import FormatCommonData from "./Result"; 
+import FormatCommonData from "./CommonData"; 
 import PropTypes from "prop-types"; 
 import { ListGroup } from 'react-bootstrap';
 

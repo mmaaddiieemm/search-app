@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ListGroup} from "react-bootstrap"; 
-import FormatCommonData from "./Result"; 
+import {ListGroup, Label} from "react-bootstrap"; 
+import FormatCommonData from "./CommonData"; 
+import DataRow from "./DataRow"; 
 import "./Results.css"; 
 
 function FormatUserData({ userData }) {
@@ -9,46 +10,18 @@ function FormatUserData({ userData }) {
   // name, alias, url, email, phone
   // tags, role, signature, organization_id
   // active, verified, suspended, shared, locale, timezone, last_login_at
-  
-  // problem items: 
-  // verified (id=55), locale, timezone, email,
-  
-  console.log(userData); 
+  var keys = [['name', 'alias', 'email', 'url', 'phone'] ,
+              ['tags', 'role', 'signature', 'organization_id'],
+              ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
   return(
     <>
-      <p><b>name: </b> {userData.name} <b> alias: </b> {userData.alias} 
-        <b> email: </b> {verifyData(userData, 'email')} <b> phone: </b> {verifyData(userData, 'phone')}
-        <b> url: </b> {userData.url}</p>
-      <p>tags: {verifyData(userData, 'tags')} </p>
-      <p> active: {verifyData(userData, 'active')} verified: {verifyData(userData, 'verified')} shared: {userData.shared} locale: {verifyData(userData, 'locale')} timezone: {verifyData(userData, 'timezone')}</p>
+      <DataRow data={userData} keys={keys[0]} />
+      <DataRow data={userData} keys={keys[1]} />
+      <DataRow data={userData} keys={keys[2]} />
     </>
   ); 
 }
 
-function verifyData( data, param) {
-  // check to make sure the data is valid
-  if (param === 'tags') {
-    console.log(data);
-  } 
-  if (data.hasOwnProperty(param) && (typeof data.param !== 'undefined') && (data.param !== null)) {
-    // for arrays, make them a little easier to read by adding 
-    // spacing and buffer
-    // todo: currently broken, determine how to fix array print
-    if (Array.isArray(data.param)) {
-      var buffer = '['; 
-      for (var item in data.param) {
-        buffer.concat(item.toString() + ' ' ); 
-      }
-      console.log(buffer); 
-      return buffer.concat(']'); 
-    } else {
-      return data.param.toString(); 
-    }
-  } else {
-    // print that it's invalid
-    return <i>undefined</i>;
-  } 
-}; 
 
 function Users({ users }) {
   return (
