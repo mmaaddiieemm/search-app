@@ -18,15 +18,15 @@ function CollectResults({ searchKey, value }) {
   // this block attempts to identify the related items and adds them to the list. 
   // this definitely needs to be updated to utilize some sort of set so that 
   // we don't get duplication of entries. 
-  if ( typeof searchKey !== 'undefined' && typeof value !== 'undefined' && !searchKey.includes('id')) {
-    // loop through secondary results and add them to the list? 
-    let firstResults = users.concat(tickets).concat(orgs); 
-    for (var result in firstResults) {
-      users = users.concat(Search('id', firstResults[result]._id, UsersDb)); 
-      tickets = tickets.concat(Search('id', firstResults[result]._id, TicketsDb)); 
-      orgs = orgs.concat(Search('id', firstResults[result]._id, OrgDb)); 
-    }    
-  }
+  // if ( typeof searchKey !== 'undefined' && typeof value !== 'undefined' && !searchKey.includes('id')) {
+  //   // loop through secondary results and add them to the list? 
+  //   let firstResults = users.concat(tickets).concat(orgs); 
+  //   for (var result in firstResults) {
+  //     users = users.concat(Search('id', firstResults[result]._id, UsersDb)); 
+  //     tickets = tickets.concat(Search('id', firstResults[result]._id, TicketsDb)); 
+  //     orgs = orgs.concat(Search('id', firstResults[result]._id, OrgDb)); 
+  //   }    
+  // }
   
   if (users.length === 0 && tickets.length === 0 && orgs.length === 0 ) {
     return <p className="App-results">No entry found that matches criteria</p>; 
