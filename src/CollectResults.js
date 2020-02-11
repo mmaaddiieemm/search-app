@@ -4,9 +4,9 @@ import Users from './Users.js';
 import Tickets from './Tickets.js';
 import Organizations from './Organizations.js';
 
-const OrgDb = require('./data/organizations.json');
-const TicketsDb = require('./data/tickets.json');
 const UsersDb = require('./data/users.json');
+const TicketsDb = require('./data/tickets.json');
+const OrgDb = require('./data/organizations.json');
  
 function CollectResults({ searchKey, value, dataTypes }) {
   // search for all matching key:value pairs in the data and add them 
@@ -35,7 +35,7 @@ function CollectResults({ searchKey, value, dataTypes }) {
       <div>
         <Users users={users} />
         <Tickets tickets={tickets} />
-        {orgs.map((k) => <Organizations key={k.external_id} orgData={k} />)}
+        <Organizations orgs={orgs} />
       </div>
     ); 
   }
