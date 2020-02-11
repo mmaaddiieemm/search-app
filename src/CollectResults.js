@@ -8,12 +8,12 @@ const OrgDb = require('./data/organizations.json');
 const TicketsDb = require('./data/tickets.json');
 const UsersDb = require('./data/users.json');
  
-function CollectResults({ searchKey, value }) {
+function CollectResults({ searchKey, value, dataTypes }) {
   // search for all matching key:value pairs in the data and add them 
   // to the results. 
-  var users = Search(searchKey, value, UsersDb);
-  var tickets = Search(searchKey, value, TicketsDb);
-  var orgs = Search(searchKey, value, OrgDb);
+  var users = (dataTypes.includes('u')) ? Search(searchKey, value, UsersDb) : [];
+  var tickets = (dataTypes.includes('t')) ? Search(searchKey, value, TicketsDb) : [];
+  var orgs = (dataTypes.includes('o')) ? Search(searchKey, value, OrgDb) : [];
 
   // this block attempts to identify the related items and adds them to the list. 
   // this definitely needs to be updated to utilize some sort of set so that 

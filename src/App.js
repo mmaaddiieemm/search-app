@@ -6,9 +6,15 @@ import './App.css';
 function App() {
   const [searchCriteria, setSearchCriteria] = useState('');
 
-  let searchKey;
+  let searchKey = searchCriteria;
+  let dataTypes = 'uto'; 
   let value;
-  const parsedArr = searchCriteria.split('=');
+  if (searchKey.split(" ").length > 1) {
+    dataTypes = searchKey.split(" ")[0].split('-')[1]; 
+    console.log(dataTypes); 
+    searchKey = searchKey.split(" ")[1]; 
+  }
+  let parsedArr = searchKey.split('=');
   if (parsedArr.length > 1) {
     searchKey = parsedArr[0];
     value = (parsedArr[1] === null) ? '' : parsedArr[1];
@@ -23,7 +29,7 @@ function App() {
         <FormControl aria-describedby="basic-addon1" onChange={(e) => setSearchCriteria(e.target.value)} />
       </InputGroup>
       <p className="App-results">Results: </p>
-      <CollectResults searchKey={searchKey} value={value} />
+      <CollectResults searchKey={searchKey} value={value} dataTypes={dataTypes} />
     </div>
   );
 }
