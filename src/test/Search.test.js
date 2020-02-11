@@ -76,6 +76,7 @@ test('A user can search for empty values', () => {
   const val = '';
   const result = Search(criteria, val, testOrg);
   expect(result.length).toStrictEqual(1);
+  expect(result[0]._id).toStrictEqual(112); 
 });
 
 test('Return an entry only once if the contents match multiple times', () => {
