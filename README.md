@@ -29,6 +29,10 @@ Navigate to localhost:3000 in your browser.
 - Each entry in the database for any given data type contains the following properties: id, external_id, created_at.
 - No entries in the input data sets contain the value 'undefined'. 
 
+## Improvement opportunities: 
+
+- The logic in App.js that parses the input string could be more robust and the application could provide better error output. 
+
 
 ## Other Information
 * [create-react-app information and scripts](/doc/reactinfo.md)

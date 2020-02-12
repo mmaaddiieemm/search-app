@@ -15,8 +15,12 @@ function App() {
   // value that we're searching for. The string preceding that will 
   // contain any specified database types, if applicable.  
   if (searchKey.split(" ").length > 1 && (searchKey.indexOf(" ") < searchKey.indexOf("="))) {
-    dataTypes = searchKey.split(" ")[0]; 
-    searchKey = searchKey.slice(searchKey.indexOf(" ")).trim(); 
+    // the datatypes will be everything before the first =, but not including the 
+    // search key. 
+    let begginingOfKey = searchKey.split("=")[0].lastIndexOf(" "); 
+    dataTypes = searchKey.slice(0, begginingOfKey);
+    dataTypes = dataTypes.replace(" ", ""); 
+    searchKey = searchKey.slice(begginingOfKey, searchKey.length).trim(); 
   }
   // parse out the key:value pair. 
   let parsedArr = searchKey.split('=');
@@ -26,7 +30,6 @@ function App() {
   } else {
     value = '';
   }
-
 
   return (
     <div className="App-header">
