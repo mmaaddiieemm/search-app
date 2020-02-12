@@ -11,7 +11,6 @@ const OrgDb = require('./data/organizations.json');
 function CollectResults({ searchKey, value, dataTypes }) {
   // search for all matching key:value pairs in the data and add them 
   // to the results. 
-  console.log(dataTypes); 
   
   var users = (dataTypes.includes('u')) ? Search(searchKey, value, UsersDb) : [];
   var tickets = (dataTypes.includes('t')) ? Search(searchKey, value, TicketsDb) : [];
@@ -35,7 +34,6 @@ function InvalidInputData({databases}) {
     if (databases[db].length !== 0) {
       validInput = true; 
     }
-    console.log(databases[db]); 
   } 
   if (!validInput) {
     return <p className="App-results">No entry found that matches criteria</p>; 
@@ -47,9 +45,8 @@ function InvalidInputData({databases}) {
 function InvalidDataTypes({dataTypes}) {
   let invalidDataTypes = dataTypes.replace('u', '').replace('t', '').replace('o', '').trim(); 
   let realDataTypes = dataTypes.replace(invalidDataTypes, ''); 
-  if (realDataTypes === '') realDataTypes = 'uot'; 
+  if (realDataTypes === '') realDataTypes = 'uot'; // if nothing specified, default to all databases. 
   if (!(invalidDataTypes === '')) {
-    console.log('bad shit'); 
     return <p className="App-results">Error: no such datatype with value(s): {invalidDataTypes}, instead searching for {realDataTypes}</p>; 
   } else return <></>; 
 }

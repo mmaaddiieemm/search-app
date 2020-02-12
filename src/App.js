@@ -7,7 +7,6 @@ import './App.css';
 function App() {
   const [searchCriteria, setSearchCriteria] = useState('');
 
-  // parse the input data. 
   let searchKey = searchCriteria;
   let dataTypes = 'uto'; // search all types by default
   let value;
@@ -19,7 +18,7 @@ function App() {
     dataTypes = searchKey.split(" ")[0]; 
     searchKey = searchKey.slice(searchKey.indexOf(" ")).trim(); 
   }
-  // 
+  // parse out the key:value pair. 
   let parsedArr = searchKey.split('=');
   if (parsedArr.length > 1) {
     searchKey = parsedArr[0];
@@ -32,7 +31,7 @@ function App() {
   return (
     <div className="App-header">
       <p>What do you want to search? </p>
-      <p className="App-instructions">Usage: [-(datatype)] &lt;criteria&gt;=&lt;value&gt;<br/>
+      <p className="App-instructions">Usage: [datatypes] &lt;criteria&gt;=&lt;value&gt;<br/>
           Results from all specified data types that contain a key:value pair where the value is an exact match will be returned. <br/>
           To search for empty values, use the value 'undefined'<br/>
           All inputs are currently case sensitive.<br/>
