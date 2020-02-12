@@ -1,7 +1,5 @@
-import React from 'react';
-import PropTypes from "prop-types"; 
+import React from 'react'; 
 import Result from "./Result"; 
-import Organizations from './Organizations';
 
 function Tickets({ tickets }) {
   var ticketKeys=[['type', 'subject'], 

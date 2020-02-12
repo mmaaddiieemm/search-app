@@ -11,26 +11,45 @@ const OrgDb = require('./data/organizations.json');
 function CollectResults({ searchKey, value, dataTypes }) {
   // search for all matching key:value pairs in the data and add them 
   // to the results. 
-
+  console.log(dataTypes); 
+  
   var users = (dataTypes.includes('u')) ? Search(searchKey, value, UsersDb) : [];
   var tickets = (dataTypes.includes('t')) ? Search(searchKey, value, TicketsDb) : [];
   var orgs = (dataTypes.includes('o')) ? Search(searchKey, value, OrgDb) : [];
   
-  if (users.length === 0 && tickets.length === 0 && orgs.length === 0 ) {
+  return (
+    <div>
+      <InvalidDataTypes dataTypes={dataTypes}/>
+      <InvalidInputData databases={[users, tickets, orgs]} />
+      <Users users={users} />
+      <Tickets tickets={tickets}/>
+      <Organizations orgs={orgs}/>
+    </div>
+  ); 
+}
+
+// Handles if there was no matching key:value pair found in the database. 
+function InvalidInputData({databases}) {
+  var validInput = false; 
+  for (let db in databases) {
+    if (!db.length === 0) {
+      validInput = true; 
+    }
+  } 
+  if (!validInput) {
     return <p className="App-results">No entry found that matches criteria</p>; 
-  } else {
-    // while each of the logic in the three components for the datatypes is extremely 
-    // similar and could easily be condensed into one component, I wanted to keep them 
-    // separate so that each component strictly defines what should be displayed, and so 
-    // we can use PropTypes to enforce what should be passed in.
-    return (
-      <div>
-        <Users users={users} />
-        <Tickets tickets={tickets}/>
-        <Organizations orgs={orgs}/>
-      </div>
-    ); 
-  }
+  } else return <></>; 
+}
+
+// Handles if there is an invalid data type passed in. 
+// This still allows the user to search, it just discards the bad input. 
+function InvalidDataTypes({dataTypes}) {
+  let invalidDataTypes = dataTypes.replace('u', '').replace('t', '').replace('o', '').trim(); 
+  let realDataTypes = dataTypes.replace(invalidDataTypes, ''); 
+  if (!(invalidDataTypes === '')) {
+    console.log('bad shit'); 
+    return <p className="App-results">Error: no such datatype with value(s): {invalidDataTypes}, instead searching for {realDataTypes}</p>; 
+  } else return <></>; 
 }
 
 export default CollectResults;

@@ -12,18 +12,18 @@ function App() {
   let dataTypes = 'uto'; // search all types by default
   let value;
 
-  if (searchKey.split(" ").length > 1) {
+  // find the first space where it's not a part of the 
+  // value that we're searching for. The string preceding that will 
+  // contain any specified database types, if applicable.  
+  if (searchKey.split(" ").length > 1 && (searchKey.indexOf(" ") < searchKey.indexOf("="))) {
     dataTypes = searchKey.split(" ")[0]; 
-    console.log(dataTypes); 
     searchKey = searchKey.slice(searchKey.indexOf(" ")).trim(); 
-    console.log(searchKey); 
   }
+  // 
   let parsedArr = searchKey.split('=');
   if (parsedArr.length > 1) {
     searchKey = parsedArr[0];
     value = (parsedArr[1] === null) ? '' : parsedArr[1];
-    console.log(searchKey); 
-    console.log(value); 
   } else {
     value = '';
   }
@@ -32,7 +32,8 @@ function App() {
   return (
     <div className="App-header">
       <p>What do you want to search? </p>
-      <p className="App-instructions">Usage: [datatype] &lt;criteria&gt;=&lt;value&gt;<br/>
+      <p className="App-instructions">Usage: [-(datatype)] &lt;criteria&gt;=&lt;value&gt;<br/>
+          Results from all specified data types that contain a key:value pair where the value is an exact match will be returned. <br/>
           To search for empty values, use the value 'undefined'<br/>
           All inputs are currently case sensitive.<br/>
       </p>

@@ -20,11 +20,12 @@ Navigate to localhost:3000 in your browser.
 - If any field for a given type of data does not exist, the value 'undefined' will be displayed. 
 - Partial matches on values are not allowed, only complete matches.
 - Partial matches on keys are allowed, i.e. a search for 'id=23' will return results for 'external_id', 'assignee_id' etc, as long as the value is an exact match. 
+- Keys that specify array datatypes will return a match on an object if any of the array elements is an exact match for the value. 
 
 ### Assumptions:
 
 - Each entry in the database for any given data type contains the following properties: id, external_id, created_at.
-- No entries in the data sets contain the value 'undefined'. 
+- No entries in the input data sets contain the value 'undefined'. 
 
 
 ## Other Information
