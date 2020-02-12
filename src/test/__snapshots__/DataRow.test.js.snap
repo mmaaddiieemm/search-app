@@ -6,7 +6,8 @@ Array [
     <b>
        
       nameThing
-      : 
+      :
+       
     </b>
      
     a_unique_name
@@ -16,7 +17,8 @@ Array [
     <b>
        
       arrayThing
-      : 
+      :
+       
     </b>
      
     [name1,another thing]
@@ -30,7 +32,8 @@ exports[`When undefined or null data is passed in to verifyData 1`] = `
   <b>
      
     nameThing
-    : 
+    :
+     
   </b>
    
   a_unique_name
