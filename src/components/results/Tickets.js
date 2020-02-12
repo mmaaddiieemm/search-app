@@ -9,7 +9,7 @@ function Tickets({ tickets }) {
             ['tags', 'has_incidents', 'due_at', 'via']]; 
   return (
     <>
-      <Result data={tickets} customKeys={ticketKeys}/>
+      <Result data={tickets} customKeys={ticketKeys} type={'Tickets'}/>
     </>
   );
 }

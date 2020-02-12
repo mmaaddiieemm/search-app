@@ -18,11 +18,12 @@ function FormatCustomData({ data, customKeys }) {
 }
 
 
-function Result({ data, customKeys }) {
+function Result({ data, customKeys, type }) {
   if (typeof data === 'undefined' || data === null) return <></>; 
   return (
     <div className="Results">
       <ListGroup>
+        <label className="Type">{data.length > 0 ? type : ""}</label>
         {data.map((i) => 
           <ListGroup.Item key={i.external_id} >
             <FormatCustomData data={i} customKeys={customKeys}/>

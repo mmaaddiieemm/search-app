@@ -7,7 +7,7 @@ function Users({ users }) {
                   ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
   return (
     <>
-      <Result data={users} customKeys={userKeys}/>
+      <Result data={users} customKeys={userKeys} type={'Users'}/>
     </>
   );
 }

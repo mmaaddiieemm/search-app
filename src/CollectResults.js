@@ -47,6 +47,7 @@ function InvalidInputData({databases}) {
 function InvalidDataTypes({dataTypes}) {
   let invalidDataTypes = dataTypes.replace('u', '').replace('t', '').replace('o', '').trim(); 
   let realDataTypes = dataTypes.replace(invalidDataTypes, ''); 
+  if (realDataTypes === '') realDataTypes = 'uot'; 
   if (!(invalidDataTypes === '')) {
     console.log('bad shit'); 
     return <p className="App-results">Error: no such datatype with value(s): {invalidDataTypes}, instead searching for {realDataTypes}</p>; 

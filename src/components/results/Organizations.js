@@ -7,7 +7,7 @@ function Organizations({ orgs }) {
                  ['shared_tickets','tags', 'domain_names']]; 
   return (
     <>
-      <Result data={orgs} customKeys={orgKeys}/>
+      <Result data={orgs} customKeys={orgKeys} type={'Organizations'}/>
     </>
   );
 }

@@ -8,7 +8,9 @@ Navigate to localhost:3000 in your browser.
 
 ## Usage Instructions:
 
-- The type of data to search (users, tickets, organizations) can be specified by prepending -[u|t|o] to your query. If unspecified, results from data types will be included. Any permutation of u, t or o can be used here, or none at all. 
+- The type of data to search (users, tickets, organizations) can be specified by prepending -[u|t|o] to your query, u for 'users', t for 'tickets', o for 'organizations'. 
+    - If unspecified, results from data types will be included. Any permutation of u, t or o can be used here, or none at all. 
+    - Any input here other than u|o|t will be discarded. If no match is found, all databases will be searched. 
 - User input must be in the format of &lt;key&gt;=&lt;value&gt;. For example, to search for an id of 5, enter "id=5".
 - When searching for values which are 'empty', specify the &lt;value&gt; as `undefined`.
 
