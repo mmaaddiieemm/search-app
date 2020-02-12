@@ -1,19 +1,24 @@
 import React from "react"
+import renderer from 'react-test-renderer';
 import {cleanup, fireEvent, render} from '@testing-library/react';
-import CollectResults from "../CollectResults"; 
+import CollectResults from "../CollectResults.js"; 
 
 afterEach(cleanup);
 
-test('When nonsense data is input, render an error input', () => {
-    const {queryAllByText} = render(
+test('When nonsense data is input, return an error message', () => {
+    const component = renderer.create(
         <CollectResults searchKey='' value='' dataTypes='' />
     ); 
-    expect(queryAllByText('')[0]).toMatch(<body><div><p class="App-results">No entry found that matches criteria</p></div></body>); 
-
+    let tree = component.toJSON(); 
+    expect(tree).toMatchSnapshot(); 
 }); 
 
-test('when a specific data type is requested, return only data from the specified datatypes', () => {
-
+test('when a specific data type is requested, return only data from the specified datatype', () => {
+    const component = renderer.create(
+        <CollectResults searchKey="id" value='4' dataTypes='u' />
+    ); 
+    let tree = component.toJSON(); 
+    expect(tree).toMatchSnapshot(); 
 }); 
 
 test('when no datatype is specified, return results from all data types', () => {

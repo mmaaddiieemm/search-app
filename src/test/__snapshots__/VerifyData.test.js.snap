@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When an entry doesnt contain the given param, return undefined 1`] = `
+<i>
+  undefined
+</i>
+`;
+
+exports[`When an entry is null, return undefined 1`] = `
+<i>
+  undefined
+</i>
+`;
