@@ -34,6 +34,15 @@ function Search(key, val, inputData) {
           break;
         }
       }
+      // here we'll search for the inverse. If we're searching for items where
+      // the data is not present (specified by 'undefined'), then add that item
+      // to the results. 
+      else if (val === 'undefined') {
+        if (!keys[h].toString().includes(key)) {
+          results.push(entry); 
+          break;
+        }
+      }
     }
   }
   return results;
