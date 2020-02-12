@@ -16,14 +16,16 @@ function FormatOrgData({ orgData }) {
     </>
   );
 }
-function Organizations({ orgData }) {
-  if (typeof orgData === 'undefined' || orgData === null) return <></>; 
+
+
+function Organizations({ orgs }) {
+  if (typeof orgs === 'undefined' || orgs === null) return <></>; 
   return (
     <div className="Results">
       <ListGroup>
-        {orgData.map((i) => 
+        {orgs.map((i) => 
           <ListGroup.Item key={i.external_id} >
-            <FormatOrgData ticketData={i} />
+            <FormatOrgData orgData={i} />
             <FormatCommonData commonData={i} />
           </ListGroup.Item>
         )}
