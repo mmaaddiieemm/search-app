@@ -1,8 +1,8 @@
 import React from 'react';
 import Search from './Search';
-import Users from './Users.js';
-import Tickets from './Tickets.js';
-import Organizations from './Organizations.js';
+import Users from './components/results/Users.js';
+import Tickets from './components/results/Tickets.js';
+import Organizations from './components/results/Organizations.js';
 
 const UsersDb = require('./data/users.json');
 const TicketsDb = require('./data/tickets.json');
@@ -32,9 +32,10 @@ function CollectResults({ searchKey, value, dataTypes }) {
 function InvalidInputData({databases}) {
   var validInput = false; 
   for (let db in databases) {
-    if (!db.length === 0) {
+    if (databases[db].length !== 0) {
       validInput = true; 
     }
+    console.log(databases[db]); 
   } 
   if (!validInput) {
     return <p className="App-results">No entry found that matches criteria</p>; 
