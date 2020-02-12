@@ -2,25 +2,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Quick Start
 
-Run the following commands:
-`npm install`
-`npm start`
+Run the following commands: `npm install`, then `npm start`
+
+See additional instructions in the Available Scripts section under 'npm start'. 
 
 ## Assumptions and Implementation Details
 
 Usage Instructions:
 
-- User input must be in the format of &lt;key&gt;=&lt;value&gt;
+- The type of data to search (users, tickets, organizations) can be specified by the -[u|t|o] command. If unspecified, results from data types will be included. Any permutation of u, t or o can be used here. 
+- User input must be in the format of &lt;key&gt;=&lt;value&gt;. For example, to search for an id of 5, enter "id=5" 
 - When searching for values which are 'empty', do not specify anything for the &lt;value&gt; field.
 
 Assumptions:
 
-- 
+- Partial matches on values are not allowed, only complete matches.
+- Partial matches on keys are allowed, i.e. a search for 'id=23' will return results for 'external_id', 'assignee_id' etc, as long as the value is an exact match. 
+- input data must have the following properties: id, external_id, created_at.
 
 Implementation Details:
 
 - If a criteria is not found, print "No entry found that matches criteria".
-- Partial matches are not allowed, only complete matches.
+- If any field for a given type of data does not exist, the value 'undefined' will be displayed. 
 
 ## Available Scripts
 
@@ -61,7 +64,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run lint`
 
-runs eslint on the project files.
+runs eslint on the project files. 
+
+### 'npm run coverage' 
+
+due to an apparent bug in Jest, passing the --coverage option to the react test script returns coverage results that are totally empty, so i've just added this as a script to save some time. Bug report: https://github.com/facebook/create-react-app/issues/6888
 
 ## Learn More
 

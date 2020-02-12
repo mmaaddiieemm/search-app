@@ -1,11 +1,12 @@
 import React from "react"; 
-
 import PropTypes from "prop-types"; 
+import DataRow from "./DataRow"; 
 
 function FormatCommonData({commonData}) {
+    var keys = ['_id', 'external_id', 'created_at']; 
     return(
         <>
-            <p>_id: {commonData._id} external_id: {commonData.external_id} created_at: {commonData.created_at}</p>
+            <DataRow data={commonData} keys={keys} />
         </>
     ); 
 }
