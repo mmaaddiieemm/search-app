@@ -20,15 +20,3 @@ test('when a specific data type is requested, return only data from the specifie
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-test('when no datatype is specified, return results from all data types', () => {
-
-});
-
-test('when valid input is entered and there is matching data, render the relevant data', () => {
-
-});
-
-test('when valid input is entered and there is no matching data, render a message indicating no relevant data found', () => {
-
-});
