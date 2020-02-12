@@ -14,11 +14,18 @@
 }
 
 .App-instructions {
-  font-size: calc(6px + 2vmin); 
+  color: gainsboro; 
+  font-size: 20px; 
 }
 
 .App-results {
   font-size: calc(10px + 2vmin); 
+  max-width: 500px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .mb-3 {

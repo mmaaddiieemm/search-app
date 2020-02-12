@@ -1,94 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A basic react application to search through user, ticket and organization data. 
 
 ## Quick Start
 
-Run the following commands:
-`npm install`
-`npm start`
+Run the following commands: `npm install`, then `npm start`. 
+
+Navigate to localhost:3000 in your browser.  
+
+## Usage Instructions:
+
+- The type of data to search (users, tickets, organizations) can be specified by prepending -[u|t|o] to your query, u for 'users', t for 'tickets', o for 'organizations'. 
+    - If unspecified, results from data types will be included. Any permutation of u, t or o can be used here, or none at all. 
+    - Any input here other than u|o|t will be discarded. If no match is found, all databases will be searched. 
+- User input must be in the format of &lt;key&gt;=&lt;value&gt;. For example, to search for an id of 5, enter "id=5".
+- When searching for values which are 'empty', specify the &lt;value&gt; as `undefined`.
 
 ## Assumptions and Implementation Details
 
-Usage Instructions:
-
-- User input must be in the format of &lt;key&gt;=&lt;value&gt;
-- When searching for values which are 'empty', do not specify anything for the &lt;value&gt; field.
-
-Assumptions:
-
-- 
-
-Implementation Details:
+### Implementation Details:
 
 - If a criteria is not found, print "No entry found that matches criteria".
-- Partial matches are not allowed, only complete matches.
+- If any field for a given type of data does not exist, the value 'undefined' will be displayed. 
+- Partial matches on values are not allowed, only complete matches.
+- Partial matches on keys are allowed, i.e. a search for 'id=23' will return results for 'external_id', 'assignee_id' etc, as long as the value is an exact match. 
+- Keys that specify array datatypes will return a match on an object if any of the array elements is an exact match for the value. 
 
-## Available Scripts
+### Assumptions:
 
-In the project directory, you can run:
+- Each entry in the database for any given data type contains the following properties: id, external_id, created_at.
+- No entries in the input data sets contain the value 'undefined'. 
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### `npm run lint`
-
-runs eslint on the project files.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Other Information
+* [create-react-app information and scripts](/doc/reactinfo.md)

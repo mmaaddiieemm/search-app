@@ -29,7 +29,8 @@ const testOrg = [
     url: 'maddie.com',
     description: '',
     assignee_id: 21, 
-    submitter_id: 20
+    submitter_id: 20, 
+    is_fake: 'maybe'
   },
   {
     _id: 113,
@@ -43,7 +44,8 @@ const testOrg = [
     url: 'maddie.com',
     description: 'non-empty description!',
     assignee_id: 1,
-    submitter_id: 202
+    submitter_id: 202, 
+    is_fake: 'probably'
   },
 
 ];
@@ -76,10 +78,28 @@ test('A user can search for empty values', () => {
   const val = '';
   const result = Search(criteria, val, testOrg);
   expect(result.length).toStrictEqual(1);
+  expect(result[0]._id).toStrictEqual(112); 
 });
 
 test('Return an entry only once if the contents match multiple times', () => {
   const criteria= '_id'; 
   const result = Search(criteria, 22, testOrg); 
   expect(result.length).toStrictEqual(1); 
+}); 
+
+test('Return an empty array if any of the input values are null', () => {
+  let result = Search(null, '231', testOrg); 
+  expect(result.length).toStrictEqual(0); 
+  result = Search('ids', null, testOrg); 
+  expect(result.length).toStrictEqual(0); 
+  result = Search('ids', 12, null); 
+  expect(result.length).toStrictEqual(0); 
+}); 
+
+test('If the user searches for a key that doesnt exist, return applicable items', () => {
+  let result = Search('is_fake', 'undefined', testOrg); 
+  console.log(result); 
+  expect(result.length).toStrictEqual(1); 
+  expect(result[0]._id).toStrictEqual(113); 
 })
+
