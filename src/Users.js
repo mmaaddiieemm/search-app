@@ -1,51 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ListGroup, Label} from "react-bootstrap"; 
-import FormatCommonData from "./CommonData"; 
-import DataRow from "./DataRow"; 
-import "./Results.css"; 
-
-function FormatUserData({ userData }) {
-  // want to return in this format: 
-  var keys = [['name', 'alias', 'email', 'url', 'phone'] ,
-              ['tags', 'role', 'signature', 'organization_id'],
-              ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
-  return(
-    <>
-      {keys.map((row) => {
-        return (<DataRow key={row} data={userData} keys={row} />)
-      })}
-    </>
-  ); 
-}
-
+import Result from "./Result"; 
 
 function Users({ users }) {
-  if (typeof users === 'undefined' || users === null) return <></>; 
+  var userKeys = [['name', 'alias', 'email', 'url', 'phone'] ,
+                  ['tags', 'role', 'signature', 'organization_id'],
+                  ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
   return (
-    <div className="Results">
-      <ListGroup>
-        {users.map((i) => 
-          <ListGroup.Item key={i.external_id}>
-            <FormatUserData userData={i} />
-            <FormatCommonData commonData={i} />
-          </ListGroup.Item>
-        )}
-      </ListGroup>
-    </div>
+    <>
+      <Result data={users} customKeys={userKeys}/>
+    </>
   );
 }
 
 Users.propTypes = {
-  userData: PropTypes.shape({
-    _id: PropTypes.number,
+  users: PropTypes.shape({
+    _id: PropTypes.string,
     external_id: PropTypes.string,
     created_at: PropTypes.string,
     name: PropTypes.string,
     alias: PropTypes.string,
-    active: PropTypes.bool,
-    verified: PropTypes.bool,
-    shared: PropTypes.bool,
+    active: PropTypes.string,
+    verified: PropTypes.string,
+    shared: PropTypes.string,
     locale: PropTypes.string,
     timezone: PropTypes.string,
   }),

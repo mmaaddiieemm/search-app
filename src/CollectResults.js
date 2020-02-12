@@ -26,8 +26,8 @@ function CollectResults({ searchKey, value, dataTypes }) {
     return (
       <div>
         <Users users={users} />
-        <Tickets tickets={tickets} />
-        <Organizations orgs={orgs} />
+        <Tickets tickets={tickets}/>
+        <Organizations orgs={orgs}/>
       </div>
     ); 
   }
