@@ -7,9 +7,6 @@ import "./Results.css";
 
 function FormatUserData({ userData }) {
   // want to return in this format: 
-  // name, alias, url, email, phone
-  // tags, role, signature, organization_id
-  // active, verified, suspended, shared, locale, timezone, last_login_at
   var keys = [['name', 'alias', 'email', 'url', 'phone'] ,
               ['tags', 'role', 'signature', 'organization_id'],
               ['active', 'verified', 'suspended', 'shared', 'locale', 'timezone', 'last_login_at']];
