@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When data at param is valid, return the data in a string form 1`] = `
+Array [
+  <label>
+    <b>
+       
+      nameThing
+      : 
+    </b>
+     
+    a_unique_name
+     
+  </label>,
+  <label>
+    <b>
+       
+      arrayThing
+      : 
+    </b>
+     
+    [name1,another thing]
+     
+  </label>,
+]
+`;
+
+exports[`When undefined or null data is passed in to verifyData 1`] = `
+<label>
+  <b>
+     
+    nameThing
+    : 
+  </b>
+   
+  a_unique_name
+   
+</label>
+`;

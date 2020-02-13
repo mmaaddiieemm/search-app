@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When nonsense data is input, return an error message 1`] = `
+<div>
+  <p
+    className="App-results"
+  >
+    No entry found that matches criteria
+  </p>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        
+      </label>
+    </div>
+  </div>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        
+      </label>
+    </div>
+  </div>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`when a specific data type is requested, return only data from the specified datatype 1`] = `
+<div>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        Users
+      </label>
+      <div
+        className="list-group-item"
+        data-rb-event-key={null}
+        disabled={false}
+        onClick={[Function]}
+      >
+        <label>
+          <b>
+             
+            name
+            : 
+          </b>
+           
+          Rose Newton
+           
+        </label>
+        <label>
+          <b>
+             
+            alias
+            : 
+          </b>
+           
+          Mr Cardenas
+           
+        </label>
+        <label>
+          <b>
+             
+            email
+            : 
+          </b>
+           
+          cardenasnewton@flotonic.com
+           
+        </label>
+        <label>
+          <b>
+             
+            url
+            : 
+          </b>
+           
+          http://initech.zendesk.com/api/v2/users/4.json
+           
+        </label>
+        <label>
+          <b>
+             
+            phone
+            : 
+          </b>
+           
+          8685-482-450
+           
+        </label>
+        <label>
+          <b>
+             
+            tags
+            : 
+          </b>
+           
+          [Gallina,Glenshaw,Rowe,Babb]
+           
+        </label>
+        <label>
+          <b>
+             
+            role
+            : 
+          </b>
+           
+          end-user
+           
+        </label>
+        <label>
+          <b>
+             
+            signature
+            : 
+          </b>
+           
+          Don't Worry Be Happy!
+           
+        </label>
+        <label>
+          <b>
+             
+            organization_id
+            : 
+          </b>
+           
+          122
+           
+        </label>
+        <label>
+          <b>
+             
+            active
+            : 
+          </b>
+           
+          true
+           
+        </label>
+        <label>
+          <b>
+             
+            verified
+            : 
+          </b>
+           
+          true
+           
+        </label>
+        <label>
+          <b>
+             
+            suspended
+            : 
+          </b>
+           
+          true
+           
+        </label>
+        <label>
+          <b>
+             
+            shared
+            : 
+          </b>
+           
+          true
+           
+        </label>
+        <label>
+          <b>
+             
+            locale
+            : 
+          </b>
+           
+          de-CH
+           
+        </label>
+        <label>
+          <b>
+             
+            timezone
+            : 
+          </b>
+           
+          Netherlands
+           
+        </label>
+        <label>
+          <b>
+             
+            last_login_at
+            : 
+          </b>
+           
+          2012-09-25T01:32:46 -10:00
+           
+        </label>
+        <label>
+          <b>
+             
+            _id
+            : 
+          </b>
+           
+          4
+           
+        </label>
+        <label>
+          <b>
+             
+            external_id
+            : 
+          </b>
+           
+          37c9aef5-cf01-4b07-af24-c6c49ac1d1c7
+           
+        </label>
+        <label>
+          <b>
+             
+            created_at
+            : 
+          </b>
+           
+          2016-02-09T07:52:10 -11:00
+           
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        
+      </label>
+    </div>
+  </div>
+  <div
+    className="Results"
+  >
+    <div
+      className="list-group"
+      onKeyDown={[Function]}
+    >
+      <label
+        className="Type"
+      >
+        
+      </label>
+    </div>
+  </div>
+</div>
+`;
