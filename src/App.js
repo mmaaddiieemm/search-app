@@ -42,7 +42,7 @@ function App() {
         <br />
         To search for empty values, use the value 'undefined'
         <br />
-        All inputs are currently case sensitive.
+        All inputs are case-insensitive.
         <br />
       </p>
       <InputGroup className="mb-3">

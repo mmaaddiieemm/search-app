@@ -13,6 +13,7 @@ Navigate to localhost:3000 in your browser.
     - Any input here other than u|o|t will be discarded. If no match is found, all databases will be searched. 
 - User input must be in the format of &lt;key&gt;=&lt;value&gt;. For example, to search for an id of 5, enter "id=5".
 - When searching for values which are 'empty', specify the &lt;value&gt; as `undefined`.
+- All input values are case-insensitive. 
 
 ## Assumptions and Implementation Details
 
