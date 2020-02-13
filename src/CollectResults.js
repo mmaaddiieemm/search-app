@@ -9,6 +9,7 @@ const TicketsDb = require('./data/tickets.json');
 const OrgDb = require('./data/organizations.json');
 
 function CollectResults({ searchKey, value, dataTypes }) {
+  dataTypes = dataTypes.toLowerCase(); 
   // search for all matching key:value pairs in the data and add them
   // to the results.
 
