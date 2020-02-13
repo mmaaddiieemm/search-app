@@ -104,6 +104,5 @@ test('If the user searches for a key that doesnt exist, return applicable items'
 
 test('Search functionality is case-insensitive', () => {
   const result = Search('Is_Fake', 'MayBe', testOrg ); 
-  console.log(result); 
   expect(result[0]._id).toStrictEqual(112); 
 })
