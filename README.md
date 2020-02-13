@@ -32,8 +32,12 @@ Navigate to localhost:3000 in your browser.
 
 ## Improvement opportunities: 
 
-- The logic in App.js that parses the input string could be more robust and the application could provide better error output. 
-
+- The logic in App.js that parses the input string could be more robust and the application could provide better error output/help information. 
+- Functionality could be extended so that if, for instance the user searches for name=Maddie Meier, the results include both the associated user item and also any tickets, organizations (if applicable) which reference that specific user ID.
+- There are a couple of ways the search could be made more efficient:
+    - Reduce the number of calls to the search funtion until the user input is complete.
+    - Reduce the size of data passed between methods by just passing the index of the entry instead of the entire entry.
+    - Implement some sort of caching mechanism for recent results.
 
 ## Other Information
 * [create-react-app information and scripts](/doc/reactinfo.md)
